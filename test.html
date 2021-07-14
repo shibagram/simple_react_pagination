@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let posts = [
+            { id: 1, text: "text" },
+            { id: 2, text: "text" },
+            { id: 3, text: "text" },
+            { id: 4, text: "text" },
+            { id: 5, text: "text" },
+            { id: 6, text: "text" },
+            { id: 7, text: "text" },
+            { id: 8, text: "text" },
+            { id: 9, text: "text" },
+            { id: 10, text: "text" }
+        ]
+
+        const devideJSON = (data) => {
+            let newData = [];
+            let innerList = [];
+
+            for (let i = 0; i < data.length + 1; i++) {
+                if (i % 3 == 0) {
+                    innerList = [];
+                };
+                innerList.push(data[i]);
+                if (i % 3 == 2) {
+                    newData.push(innerList);
+                };
+            };
+            return newData;
+        };
+
+        posts = devideJSON(posts);
+        console.log(posts);
+    </script>
+
+</body>
+
+</html>
